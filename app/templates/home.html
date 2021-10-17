@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- {{ api.Data }} -->
+<!-- <h1>Hello, Cryptos...!!</h1> -->
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Daily High</th>
+      <th scope="col">Daily Low</th>
+      <th scope="col">Market Cap</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for key, value in price.DISPLAY.items %}
+  <tr>
+    <td>{{key}}</td>
+    <td>{{value.USD.PRICE}}</td>
+    <td>{{value.USD.HIGHDAY}}</td>
+    <td>{{value.USD.LOWDAY}}</td>
+    <td>{{value.USD.MKTCAP}}</td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+
+<br>
+
+<div class="jumbotron">
+  <h1 class="display-4">Welcom to crypto news site</h1>
+  <p class="lead">This is to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+</div>
+
+<br>
+<div class="container">
+    <div class="row">
+        {%for i in api.Data%}
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ i.imageurl }}" class="card-img-top" alt="{{ i.source }}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ i.title }}</h5>
+                      <p class="card-text">{{ i.body }}</p>
+                      <a href="{{ i.url }}" class="btn btn-secondary">Read More</a>
+                    </div>
+                  </div>
+                  <br>
+            </div>
+          {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

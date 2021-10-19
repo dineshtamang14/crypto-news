@@ -22,4 +22,5 @@ def prices(req):
         price = json.loads(quote_req.content)
         return render(req, 'price.html', {'quote': quote, 'price': price})
     else:
-        return render(req, "price.html", {})
+        notfound = 'enter some some crypto name in the search bar'
+        return render(req, "price.html", {'notfound': notfound})

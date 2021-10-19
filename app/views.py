@@ -14,3 +14,11 @@ def home(req):
     api_req = requests.get("https://min-api.cryptocompare.com/data/v2/news/?lang=EN")
     api = json.loads(api_req.content)
     return render(req, "home.html", {"api": api, "price": price})
+
+
+def prices(req):
+    if req.method == 'POST':
+        quote = req.POST['quote']
+        return render(req, 'price.html', {'quote': quote})
+    else:
+        return render(req, "price.html", {})

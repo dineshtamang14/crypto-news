@@ -3,8 +3,14 @@
 {% block content %}
 <!-- {{ api.Data }} -->
 <!-- <h1>Hello, Cryptos...!!</h1> -->
+<div class="jumbotron">
+  <h1 class="display-4">Welcom to crypto news site</h1>
+  <p class="lead">This is to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+</div>
 
-<table class="table">
+<table class="table table-bordered table-hover">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Name</th>
@@ -29,14 +35,6 @@
 
 <br>
 
-<div class="jumbotron">
-  <h1 class="display-4">Welcom to crypto news site</h1>
-  <p class="lead">This is to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-</div>
-
-<br>
 <div class="container">
     <div class="row">
         {%for i in api.Data%}
